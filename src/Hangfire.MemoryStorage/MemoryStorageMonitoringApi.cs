@@ -205,7 +205,7 @@ namespace Hangfire.MemoryStorage
 
             var query =
                 from server in servers
-                let serverData = JobHelper.FromJson<ServerData>(server.Data)
+                let serverData = JobHelper.FromJson<dynamic>(server.Data)
                 select new ServerDto
                 {
                     Name = server.Id,
